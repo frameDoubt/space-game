@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfs0gta40qw6x"]
+[gd_scene load_steps=2 format=3 uid="uid://dfs0gta40qw6x"]
 
 [ext_resource type="PackedScene" uid="uid://8o0mbkb7rv5f" path="res://Characters/Players/player_0.tscn" id="1_0asfr"]
-[ext_resource type="PackedScene" uid="uid://db73v04rjmmer" path="res://Planetary_Objects/asteroid_large.tscn" id="2_uvtjc"]
 
 [node name="Test_Level_0" type="Node2D"]
 
 [node name="Player0" parent="." instance=ExtResource("1_0asfr")]
 position = Vector2(120, 92)
-
-[node name="Asteroid_Large" parent="." instance=ExtResource("2_uvtjc")]
-position = Vector2(591, 311)
