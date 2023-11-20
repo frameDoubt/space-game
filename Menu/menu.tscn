@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3uitstltpu55"]
+[gd_scene load_steps=12 format=3 uid="uid://b3uitstltpu55"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dv6wc"]
 [ext_resource type="Theme" uid="uid://bq33ra5ym6daa" path="res://Menu/menu_theme.tres" id="1_jnhiu"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://Menu/LabelShowSliderValue.gd" id="5_pafwi"]
 [ext_resource type="AudioStream" uid="uid://c46i33ebsjswc" path="res://Menu/sci-fi-click.wav" id="8_qkwie"]
 [ext_resource type="AudioStream" uid="uid://duw186xn3fim2" path="res://Menu/sci-fi-inspect.wav" id="8_tde1g"]
+[ext_resource type="AudioStream" uid="uid://qu3lmm6en5e3" path="res://Menu/sci-fi-click-2.wav" id="9_n7m31"]
+[ext_resource type="AudioStream" uid="uid://c5c0xk1d38itq" path="res://Menu/sci-fi-click-3.wav" id="10_tn1et"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -112,7 +114,7 @@ columns = 3
 layout_mode = 2
 text = "Starbases"
 
-[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -126,7 +128,7 @@ script = ExtResource("5_pafwi")
 layout_mode = 2
 text = "Outposts"
 
-[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -140,7 +142,7 @@ script = ExtResource("5_pafwi")
 layout_mode = 2
 text = "Kingons"
 
-[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -193,7 +195,7 @@ columns = 3
 layout_mode = 2
 text = "Rulan Warbirds"
 
-[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -207,7 +209,7 @@ script = ExtResource("5_pafwi")
 layout_mode = 2
 text = "Rulan Superhawks"
 
-[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -221,7 +223,7 @@ script = ExtResource("5_pafwi")
 layout_mode = 2
 text = "Cardaian Destroyers"
 
-[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -235,7 +237,7 @@ script = ExtResource("5_pafwi")
 layout_mode = 2
 text = "Fengi Mauraders"
 
-[node name="HSlider4" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+[node name="HSlider4" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer" groups=["Sliders"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 max_value = 10.0
@@ -288,14 +290,14 @@ columns = 2
 layout_mode = 2
 text = "Cube Ships"
 
-[node name="CheckButton" type="CheckButton" parent="SettingsMarginContainer/VBoxContainer/ModifiersMarginContainer3/MarginContainer/VBoxContainer/GridContainer"]
+[node name="CheckButton" type="CheckButton" parent="SettingsMarginContainer/VBoxContainer/ModifiersMarginContainer3/MarginContainer/VBoxContainer/GridContainer" groups=["Toggles"]]
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="SettingsMarginContainer/VBoxContainer/ModifiersMarginContainer3/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Cluster Similar Types"
 
-[node name="CheckButton2" type="CheckButton" parent="SettingsMarginContainer/VBoxContainer/ModifiersMarginContainer3/MarginContainer/VBoxContainer/GridContainer"]
+[node name="CheckButton2" type="CheckButton" parent="SettingsMarginContainer/VBoxContainer/ModifiersMarginContainer3/MarginContainer/VBoxContainer/GridContainer" groups=["Toggles"]]
 layout_mode = 2
 
 [node name="PlayersMarginContainer" type="MarginContainer" parent="."]
@@ -444,11 +446,27 @@ text = "Play"
 layout_mode = 2
 text = "Exit"
 
-[node name="InspectAudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+[node name="InspectAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_tde1g")
+
+[node name="SliderStartAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_n7m31")
+
+[node name="SliderEndAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_n7m31")
+pitch_scale = 0.8
+
+[node name="SliderChangeAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_tn1et")
+volume_db = -8.0
+pitch_scale = 2.0
 
 [node name="ClickAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_qkwie")
+
+[node name="ToggleOffAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qkwie")
+pitch_scale = 0.8
 
 [connection signal="exit" from="." to="Database" method="_on_menu_exit"]
 [connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider" to="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/Label2" method="_on_h_slider_value_changed"]
