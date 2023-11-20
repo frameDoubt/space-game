@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3uitstltpu55"]
+[gd_scene load_steps=8 format=3 uid="uid://b3uitstltpu55"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dv6wc"]
 [ext_resource type="Theme" uid="uid://bq33ra5ym6daa" path="res://Menu/menu_theme.tres" id="1_jnhiu"]
+[ext_resource type="Script" path="res://Database/database.gd" id="3_t5yul"]
 [ext_resource type="Texture2D" uid="uid://cm4ne3afi52pl" path="res://Menu/UI_Sprites/squareWhite.png" id="3_woq01"]
 [ext_resource type="Texture2D" uid="uid://bjv12gok74n8p" path="res://Menu/UI_Sprites/metalPanel.png" id="4_ln66y"]
 [ext_resource type="Texture2D" uid="uid://dxwnv3ugdxrkl" path="res://Menu/UI_Sprites/glassPanel_corners.png" id="5_mu71x"]
@@ -16,6 +17,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_jnhiu")
 script = ExtResource("1_dv6wc")
+
+[node name="Database" type="Node" parent="."]
+script = ExtResource("3_t5yul")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -438,6 +442,7 @@ text = "Captain"
 layout_mode = 2
 text = "Admiral"
 
+[connection signal="exit" from="." to="Database" method="_on_menu_exit"]
 [connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider" to="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/Label2" method="_on_h_slider_value_changed"]
