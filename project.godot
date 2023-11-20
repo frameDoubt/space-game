@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.1", "GL Compatibility")
 
 [autoload]
 
-Database="*res://Database/database.gd"
+database="*res://Database/database.gd"
 
 [dotnet]
 

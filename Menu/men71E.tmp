@@ -358,10 +358,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_pl4k7")
 
-[node name="PresetMarginContainer" type="MarginContainer" parent="PresetMarginContainer"]
+[node name="AlliesMarginContainer" type="MarginContainer" parent="PresetMarginContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PresetMarginContainer/PresetMarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PresetMarginContainer/AlliesMarginContainer"]
 modulate = Color(0.309804, 0.364706, 0.458824, 1)
 layout_mode = 2
 texture = ExtResource("4_ln66y")
@@ -370,16 +370,16 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="PresetMarginContainer/PresetMarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PresetMarginContainer/AlliesMarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PresetMarginContainer/PresetMarginContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PresetMarginContainer/AlliesMarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PresetMarginContainer/PresetMarginContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PresetMarginContainer/AlliesMarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="PresetMarginContainer/PresetMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="PresetMarginContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
 modulate = Color(0.854902, 0.364706, 0.294118, 1)
 layout_mode = 2
 texture = ExtResource("3_woq01")
@@ -388,7 +388,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="Label" type="Label" parent="PresetMarginContainer/PresetMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="Label" type="Label" parent="PresetMarginContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 text = "Presets"
 horizontal_alignment = 1

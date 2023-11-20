@@ -9,7 +9,7 @@ signal exit
 @onready var slider_change_sound = $SliderChangeAudioStreamPlayer2D
 @onready var toggle_off_sound = $ToggleOffAudioStreamPlayer2D
 
-func _ready()->void:
+func _ready():
 	var buttons: Array = get_tree().get_nodes_in_group("Buttons")
 	for inst in buttons:
 		inst.mouse_entered.connect(on_button_hover)
@@ -33,10 +33,10 @@ func _ready()->void:
 		inst.text_changed.connect(on_text_changed)
 		inst.text_submitted.connect(on_text_submitted)
 
-func on_button_hover()->void:
+func on_button_hover():
 	inspect_sound.play()
 	
-func on_button_pressed()->void:
+func on_button_pressed():
 	button_sound.play()
 	
 func on_slider_start_drag():
