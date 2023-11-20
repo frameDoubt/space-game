@@ -42,10 +42,10 @@ func on_button_pressed():
 func on_slider_start_drag():
 	slider_start_sound.play()
 	
-func on_slider_end_drag(value_changed):
+func on_slider_end_drag(_value_changed):
 	slider_end_sound.play()
 	
-func on_slider_changed(value):
+func on_slider_changed(_value):
 	slider_change_sound.play()
 	
 func on_toggle_toggled(value):
@@ -54,10 +54,10 @@ func on_toggle_toggled(value):
 	else:
 		toggle_off_sound.play()
 
-func on_text_changed(value):
+func on_text_changed(_value):
 	slider_change_sound.play()
 	
-func on_text_submitted(value):
+func on_text_submitted(_value):
 	button_sound.play()
 
 func _on_play_button_pressed():
