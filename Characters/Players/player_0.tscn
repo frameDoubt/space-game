@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://8o0mbkb7rv5f"]
+[gd_scene load_steps=3 format=3 uid="uid://8o0mbkb7rv5f"]
 
 [ext_resource type="Script" path="res://Characters/Players/player_0.gd" id="1_jolt4"]
 [ext_resource type="Texture2D" uid="uid://dyk3fg8k2nxi2" path="res://Assets/Player_Sprites/ship_A.png" id="1_k1hrn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6kl8"]
-size = Vector2(12.0208, 12.0208)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6dc8"]
-size = Vector2(11.3137, 10.6066)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xeos"]
-size = Vector2(10.6066, 11.3137)
 
 [node name="Player0" type="RigidBody2D"]
 linear_damp = 1.0
@@ -21,18 +12,3 @@ metadata/_edit_group_ = true
 [node name="Player0_Sprite" type="Sprite2D" parent="."]
 texture_filter = 3
 texture = ExtResource("1_k1hrn")
-
-[node name="Bow_Collision_Shape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3.5)
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_g6kl8")
-
-[node name="Aft_Port_Collision_Shape" type="CollisionShape2D" parent="."]
-position = Vector2(-8.25, 4.25)
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_g6dc8")
-
-[node name="Aft_Starboard_Collision_Shape" type="CollisionShape2D" parent="."]
-position = Vector2(8.25, 4.25)
-rotation = 0.785398
-shape = SubResource("RectangleShape2D_3xeos")
