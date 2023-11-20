@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.1", "GL Compatibility")
 
 project/assembly_name="Space Game"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
 [input]
 
 accelerate={
