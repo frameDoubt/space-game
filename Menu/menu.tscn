@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3uitstltpu55"]
+[gd_scene load_steps=5 format=3 uid="uid://b3uitstltpu55"]
 
 [ext_resource type="Script" path="res://Menu/menu.gd" id="1_dv6wc"]
+[ext_resource type="Theme" uid="uid://bq33ra5ym6daa" path="res://Menu/menu_theme.tres" id="1_jnhiu"]
+[ext_resource type="Texture2D" uid="uid://cm4ne3afi52pl" path="res://Menu/UI_Sprites/squareWhite.png" id="3_woq01"]
+[ext_resource type="Texture2D" uid="uid://bjv12gok74n8p" path="res://Menu/UI_Sprites/metalPanel.png" id="4_ln66y"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -9,23 +12,259 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jnhiu")
 script = ExtResource("1_dv6wc")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0901961, 0.101961, 0.145098, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="TitleMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TitleMarginContainer"]
+modulate = Color(0.854902, 0.364706, 0.294118, 1)
+layout_mode = 2
+texture = ExtResource("3_woq01")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="TitleMarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Space Game"
+horizontal_alignment = 1
+
+[node name="ControlButtonMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -92.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ControlButtonMarginContainer"]
+modulate = Color(0.309804, 0.364706, 0.458824, 1)
+layout_mode = 2
+texture = ExtResource("4_ln66y")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlButtonMarginContainer"]
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlButtonMarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="ControlButtonMarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
 
-[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="ControlButtonMarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="SettingsMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMarginContainer"]
+layout_mode = 2
+
+[node name="AlliesMarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer"]
+modulate = Color(0.309804, 0.364706, 0.458824, 1)
+layout_mode = 2
+texture = ExtResource("4_ln66y")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+modulate = Color(0.854902, 0.364706, 0.294118, 1)
+layout_mode = 2
+texture = ExtResource("3_woq01")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Allies"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Starbases"
+
+[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label2" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Label3" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Outposts"
+
+[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label4" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Label5" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Kingons"
+
+[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label6" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="EnemiesMarginContainer2" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2"]
+modulate = Color(0.309804, 0.364706, 0.458824, 1)
+layout_mode = 2
+texture = ExtResource("4_ln66y")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+modulate = Color(0.854902, 0.364706, 0.294118, 1)
+layout_mode = 2
+texture = ExtResource("3_woq01")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Enemies"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Rulan Warbirds"
+
+[node name="HSlider" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label2" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Label3" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Rulan Superhawks"
+
+[node name="HSlider2" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label4" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Label5" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Cardaian Destroyers"
+
+[node name="HSlider3" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label6" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Label7" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Fengi Mauraders"
+
+[node name="HSlider4" type="HSlider" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label8" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "1"
+
+[connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
