@@ -1,9 +1,9 @@
 extends Node
 
-
 var tableName = "DifficultyPresets"
 
 @onready var difficultyButtonContainer = $PresetMarginContainer/MarginContainer/VBoxContainer
+@onready var starbasesSlider = $"../SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider"
 
 func _ready():
 	database.db.query("select * from " + tableName + ";")
@@ -18,4 +18,4 @@ func _ready():
 
 func on_button_pressed(id):
 	database.db.query("select * from " + tableName + " where " + tableName + ".ID = " + str(id) + ";")
-	print(database.db.query_result)
+	starbasesSlider.value = database.db.query_result[0]["Starbases"]
