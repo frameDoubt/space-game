@@ -12,22 +12,22 @@ var tableName = "DifficultyPresets"
 @onready var fengiMauradersSlider = $"../SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/HSlider4"
 
 func _ready():
-	database.db.query("select * from " + tableName + ";")
+	database.db_persistent.query("select * from " + tableName + ";")
 	
-	for i in range(0, database.db.query_result.size()):
+	for i in range(0, database.db_persistent.query_result.size()):
 		# setup button
 		var button = Button.new()
 		button.add_to_group("Buttons")
-		button.text = database.db.query_result[i]["Name"]
-		button.pressed.connect(on_button_pressed.bind(database.db.query_result[i]["ID"]))
+		button.text = database.db_persistent.query_result[i]["Name"]
+		button.pressed.connect(on_button_pressed.bind(database.db_persistent.query_result[i]["ID"]))
 		difficultyButtonContainer.add_child(button)
 
 func on_button_pressed(id):
-	database.db.query("select * from " + tableName + " where " + tableName + ".ID = " + str(id) + ";")
-	starbasesSlider.value = database.db.query_result[0]["Starbases"]
-	outpostsSlider.value = database.db.query_result[0]["Outposts"]
-	kingonsSlider.value = database.db.query_result[0]["Kingons"]
-	rulanWarbirdsSlider.value = database.db.query_result[0]["RulanWarbirds"]
-	rulanSuperhawksSlider.value = database.db.query_result[0]["RulanSuperhawks"]
-	cardaianDestroyersSlider.value = database.db.query_result[0]["CardaianDestroyers"]
-	fengiMauradersSlider.value = database.db.query_result[0]["FengiMauraders"]
+	database.db_persistent.query("select * from " + tableName + " where " + tableName + ".ID = " + str(id) + ";")
+	starbasesSlider.value = database.db_persistent.query_result[0]["Starbases"]
+	outpostsSlider.value = database.db_persistent.query_result[0]["Outposts"]
+	kingonsSlider.value = database.db_persistent.query_result[0]["Kingons"]
+	rulanWarbirdsSlider.value = database.db_persistent.query_result[0]["RulanWarbirds"]
+	rulanSuperhawksSlider.value = database.db_persistent.query_result[0]["RulanSuperhawks"]
+	cardaianDestroyersSlider.value = database.db_persistent.query_result[0]["CardaianDestroyers"]
+	fengiMauradersSlider.value = database.db_persistent.query_result[0]["FengiMauraders"]
