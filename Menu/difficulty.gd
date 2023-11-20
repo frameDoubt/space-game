@@ -17,4 +17,5 @@ func _ready():
 		difficultyButtonContainer.add_child(button)
 
 func on_button_pressed(id):
-	print("Difficulty preset button pressed " + str(id))
+	database.db.query("select * from " + tableName + " where " + tableName + ".ID = " + str(id) + ";")
+	print(database.db.query_result)
