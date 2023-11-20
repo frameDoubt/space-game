@@ -163,7 +163,6 @@ max_value = 10.0
 [node name="Label4" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="Label5" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -177,7 +176,6 @@ max_value = 10.0
 [node name="Label6" type="Label" parent="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="EnemiesMarginContainer2" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -230,7 +228,6 @@ max_value = 10.0
 [node name="Label2" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="Label3" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -244,7 +241,6 @@ max_value = 10.0
 [node name="Label4" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="Label5" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -258,7 +254,6 @@ max_value = 10.0
 [node name="Label6" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="Label7" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -272,7 +267,6 @@ max_value = 10.0
 [node name="Label8" type="Label" parent="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "1"
-script = ExtResource("5_pafwi")
 
 [node name="ModifiersMarginContainer3" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -441,9 +435,3 @@ text = "Admiral"
 [connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ControlButtonMarginContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider" to="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/Label2" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider2" to="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/Label4" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/HSlider3" to="SettingsMarginContainer/VBoxContainer/AlliesMarginContainer/MarginContainer/VBoxContainer/GridContainer/Label6" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/HSlider" to="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/Label2" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/HSlider2" to="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/Label4" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/HSlider3" to="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/Label6" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/HSlider4" to="SettingsMarginContainer/VBoxContainer/EnemiesMarginContainer2/MarginContainer/VBoxContainer/GridContainer/Label8" method="_on_h_slider_4_value_changed"]
