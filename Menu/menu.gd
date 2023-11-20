@@ -26,6 +26,12 @@ func _ready()->void:
 	for inst in toggles:
 		inst.mouse_entered.connect(on_button_hover)
 		inst.toggled.connect(on_toggle_toggled)
+		
+	var textInput: Array = get_tree().get_nodes_in_group("TextInput")
+	for inst in textInput:
+		inst.mouse_entered.connect(on_button_hover)
+		inst.text_changed.connect(on_text_changed)
+		inst.text_submitted.connect(on_text_submitted)
 
 func on_button_hover()->void:
 	inspect_sound.play()
@@ -44,9 +50,15 @@ func on_slider_changed(value):
 	
 func on_toggle_toggled(value):
 	if value:
-		button_sound.play()
+		on_button_pressed()
 	else:
 		toggle_off_sound.play()
+
+func on_text_changed(value):
+	slider_change_sound.play()
+	
+func on_text_submitted(value):
+	button_sound.play()
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://game.tscn")
