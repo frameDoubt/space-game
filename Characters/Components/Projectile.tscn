@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4nr1wloosewt"]
+[gd_scene load_steps=4 format=3 uid="uid://d4nr1wloosewt"]
 
+[ext_resource type="Script" path="res://Characters/Scripts/Projectile.gd" id="1_o1how"]
 [ext_resource type="Texture2D" uid="uid://d34nyfk5al6r1" path="res://Assets/Planets_Sprites/star_tiny.png" id="1_xkpri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kui7v"]
 size = Vector2(6, 6)
 
 [node name="Projectile" type="CharacterBody2D"]
+script = ExtResource("1_o1how")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
