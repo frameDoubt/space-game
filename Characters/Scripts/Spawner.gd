@@ -10,5 +10,6 @@ func _unhandled_input(event):
 		var projectile = projectileScene.instantiate()
 		get_parent().add_sibling(projectile)
 		projectile.global_position = self.global_position
+		projectile.rotation = self.get_parent().rotation
 		
 		print("fire")
