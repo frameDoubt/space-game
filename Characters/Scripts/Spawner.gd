@@ -8,7 +8,7 @@ func _ready():
 func _unhandled_input(event):
 	if (event.is_action_pressed("fire")):
 		var projectile = projectileScene.instantiate()
-		get_parent().add_child(projectile)
+		get_parent().add_sibling(projectile)
 		projectile.global_position = self.global_position
 		
 		print("fire")
