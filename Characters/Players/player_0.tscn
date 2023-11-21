@@ -22,4 +22,4 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_xu5fs")
 
 [node name="Spawner" parent="." instance=ExtResource("3_8hg3b")]
-position = Vector2(-2, -21)
+position = Vector2(0, -15)
