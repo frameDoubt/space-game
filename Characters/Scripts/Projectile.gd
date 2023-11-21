@@ -7,4 +7,4 @@ func _ready():
 	pass
 
 func _process(delta):
-	move_and_collide(Vector2.UP * speed)
+	move_and_collide(Vector2.UP * speed * delta)
