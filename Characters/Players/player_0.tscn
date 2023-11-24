@@ -5,20 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://c3kears1cq5on" path="res://Characters/Components/Spawner.tscn" id="3_8hg3b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xu5fs"]
-radius = 16.0
+radius = 12.0
 height = 32.0
 
 [node name="Player0" type="RigidBody2D"]
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_jolt4")
+metadata/_edit_group_ = true
 
 [node name="Player0_Sprite" type="Sprite2D" parent="."]
 texture_filter = 3
 texture = ExtResource("1_k1hrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 1)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xu5fs")
 
 [node name="Spawner" parent="." instance=ExtResource("3_8hg3b")]
