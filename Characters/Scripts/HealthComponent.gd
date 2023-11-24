@@ -1,4 +1,4 @@
-extends CollisionShape2D
+extends Node
 
 signal died
 #signal healed
@@ -22,4 +22,3 @@ func hurt(damage):
 	else:
 		damaged.emit()
 	health_changed.emit(curr_health, max_health)
-
